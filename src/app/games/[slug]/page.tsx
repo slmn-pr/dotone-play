@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { ArrowRight, Gamepad2 } from "lucide-react";
+export default async function GameDetails({params}: {params: Promise<{slug:string}>}) {const {slug}=await params;return <section className="mx-auto max-w-xl rounded-3xl border border-white/10 bg-[#151e33] p-8 text-center"><Gamepad2 className="mx-auto mb-4 text-violet-300" size={54}/><h1 className="text-2xl font-black">بازی به‌زودی فعال می‌شود</h1><p className="mt-3 break-all text-sm text-slate-400">{slug} — در مرحله ساخت بازی‌ها پیاده‌سازی خواهد شد.</p><Link href="/games" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-sm font-bold">بازگشت به بازی‌ها <ArrowRight size={16}/></Link></section>}

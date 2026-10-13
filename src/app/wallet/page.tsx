@@ -1,0 +1,2 @@
+import { Construction } from "lucide-react";
+export default function Page(){return <section className="mx-auto max-w-2xl rounded-3xl border border-white/10 bg-[#141d32] p-8 text-center sm:p-12"><Construction className="mx-auto text-violet-300" size={52}/><h1 className="mt-4 text-3xl font-black">کیف پول</h1><p className="mt-4 leading-8 text-slate-400">تراکنش‌ها و امتیازهای نمایشی — این صفحه در فازهای بعدی با کامپوننت‌های اختصاصی تکمیل می‌شود.</p></section>}
