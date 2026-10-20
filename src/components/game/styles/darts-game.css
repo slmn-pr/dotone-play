@@ -1,0 +1,175 @@
+
+/* DotOne Native-Style Darts */
+
+.dart-game-header {
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(251, 191, 36, 0.17),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 10% 95%,
+      rgba(139, 92, 246, 0.25),
+      transparent 55%
+    ),
+    linear-gradient(125deg, #292034, #121c32 60%, #0b2735);
+}
+
+.dart-game-arena {
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      rgba(88, 63, 133, 0.28),
+      transparent 60%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #171d2b 0,
+      #171d2b 70px,
+      #1b2231 72px,
+      #141b29 75px
+    );
+  box-shadow: inset 0 0 110px rgba(0, 0, 0, 0.4);
+}
+
+.dart-game-lights {
+  background:
+    radial-gradient(
+      ellipse at 50% 5%,
+      rgba(255, 201, 95, 0.2),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 5% 50%,
+      rgba(34, 211, 238, 0.12),
+      transparent 50%
+    );
+}
+
+.dart-board-frame {
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.6));
+}
+
+.dart-crosshair {
+  filter: drop-shadow(0 0 5px #fbbf24);
+}
+
+.dart-control-panel {
+  background:
+    radial-gradient(
+      ellipse at 50% 0,
+      rgba(34, 211, 238, 0.11),
+      transparent 65%
+    ),
+    linear-gradient(135deg, #141d32, #101728);
+}
+
+.dart-drag-control {
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+  transition: box-shadow 0.2s ease;
+}
+
+.dart-drag-control:active {
+  cursor: grabbing;
+  box-shadow:
+    0 0 50px rgba(34, 211, 238, 0.45),
+    inset 0 0 25px rgba(34, 211, 238, 0.12);
+}
+
+.dart-drag-control:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 4px;
+}
+
+.dart-control-emoji {
+  filter: drop-shadow(0 4px 8px #0007);
+  transform: rotate(-25deg);
+}
+
+.dart-projectile {
+  animation: dart-flight 680ms cubic-bezier(.2,.65,.3,1)
+    both;
+}
+
+.dart-projectile-shape {
+  display: block;
+  font-size: 46px;
+  filter: drop-shadow(0 0 12px #fde68a);
+}
+
+.dart-hit-enter {
+  animation: dart-impact 350ms cubic-bezier(.1,1.8,.4,1)
+    both;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.dart-last-hit {
+  transition: background-color 200ms, border-color 200ms;
+}
+
+@keyframes dart-flight {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-50%, 230px)
+      scale(2.4)
+      rotate(-30deg);
+    filter: blur(5px);
+  }
+
+  45% {
+    opacity: 1;
+    filter: blur(2px);
+  }
+
+  85% {
+    opacity: 1;
+    transform:
+      translate(-50%, 12px)
+      scale(0.6)
+      rotate(0deg);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      scale(0.5)
+      rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes dart-impact {
+  0% {
+    opacity: 0;
+    scale: 3;
+  }
+
+  65% {
+    opacity: 1;
+    scale: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dart-game-arena *,
+  .dart-game-arena *::before,
+  .dart-game-arena *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

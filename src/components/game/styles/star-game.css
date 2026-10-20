@@ -1,0 +1,362 @@
+
+/* ================================
+   DOTONE STAR RUSH — ARCADE STYLE
+================================ */
+
+.star-header {
+  background:
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(245, 158, 11, 0.12),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 10% 100%,
+      rgba(139, 92, 246, 0.3),
+      transparent 55%
+    ),
+    linear-gradient(125deg, #21173f, #111c39 60%, #092d42);
+}
+
+.star-header-orb {
+  animation: star-float 3s ease-in-out infinite;
+  box-shadow:
+    0 0 60px rgba(251, 191, 36, 0.18),
+    inset 0 0 35px rgba(251, 191, 36, 0.08);
+}
+
+/* Galaxy Arena */
+
+.star-arena {
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 25% 25%,
+      #39206e 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 65%,
+      #123f72 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 80%,
+      #551a60 0%,
+      transparent 55%
+    ),
+    #090e20;
+
+  box-shadow:
+    inset 0 0 100px rgba(0, 0, 0, 0.4),
+    0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.star-nebula {
+  background:
+    radial-gradient(
+      ellipse at 40% 40%,
+      rgba(168, 85, 247, 0.16),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 75% 75%,
+      rgba(34, 211, 238, 0.12),
+      transparent 55%
+    );
+  animation: nebula-breathe 8s ease-in-out infinite alternate;
+}
+
+.star-background-dot {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.8);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: star-twinkle 2.5s ease-in-out infinite alternate;
+}
+
+.star-orbit {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.star-orbit-one {
+  width: 420px;
+  height: 420px;
+  left: -150px;
+  top: -130px;
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.09);
+}
+
+.star-orbit-two {
+  width: 550px;
+  height: 550px;
+  right: -200px;
+  bottom: -300px;
+}
+
+/* Start Screen */
+
+.star-intro-icon {
+  box-shadow:
+    0 0 40px rgba(251, 191, 36, 0.2),
+    inset 0 0 35px rgba(251, 191, 36, 0.12);
+  animation: star-intro-pulse 2.6s ease-in-out infinite;
+}
+
+.star-primary-button {
+  background: linear-gradient(
+    115deg,
+    #fde68a,
+    #fbbf24 55%,
+    #f59e0b
+  );
+
+  box-shadow:
+    0 7px 0 #92400e,
+    0 15px 35px rgba(245, 158, 11, 0.28);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.star-primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 0 #92400e,
+    0 20px 45px rgba(245, 158, 11, 0.4);
+}
+
+.star-primary-button:active {
+  transform: translateY(4px);
+  box-shadow:
+    0 3px 0 #92400e,
+    0 6px 15px rgba(245, 158, 11, 0.25);
+}
+
+/* Clickable Star */
+
+.star-target {
+  cursor: pointer;
+  touch-action: manipulation;
+  background: radial-gradient(
+    circle,
+    rgba(251, 191, 36, 0.27),
+    transparent 72%
+  );
+
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.8));
+
+  animation: star-target-pulse 1.25s ease-in-out infinite;
+  transition:
+    left 0.12s ease-out,
+    top 0.12s ease-out;
+}
+
+.star-target-icon {
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 24px rgba(251, 191, 36, 0.8));
+}
+
+.star-target:hover {
+  filter: drop-shadow(0 0 35px rgba(251, 191, 36, 1));
+}
+
+.star-target:active {
+  scale: 0.88;
+}
+
+.star-target:focus-visible,
+.star-primary-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 5px;
+}
+
+/* Hit Effects */
+
+.star-score-popup {
+  position: absolute;
+  z-index: 25;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  color: #fde68a;
+  font-size: 27px;
+  font-weight: 900;
+  text-shadow:
+    0 0 12px #f59e0b,
+    0 3px 8px #000;
+
+  animation: star-score-fly 0.8s ease-out forwards;
+}
+
+.star-burst-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #fcd34d;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px #fbbf24;
+  animation: star-burst-expand 0.55s ease-out forwards;
+}
+
+.star-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fde68a;
+  box-shadow: 0 0 12px #fbbf24;
+  transform: translate(-50%, -50%);
+  animation: star-particle-fly 0.65s ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.star-combo-label {
+  animation: star-combo-pop 0.28s ease-out;
+}
+
+/* Keyframes */
+
+@keyframes star-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+}
+
+@keyframes nebula-breathe {
+  from {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes star-twinkle {
+  from {
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes star-intro-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes star-target-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px #fbbf24);
+  }
+  50% {
+    filter: drop-shadow(0 0 35px #fbbf24);
+  }
+}
+
+@keyframes star-score-fly {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -85%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -190%) scale(1);
+  }
+}
+
+@keyframes star-burst-expand {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5);
+  }
+}
+
+@keyframes star-particle-fly {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + var(--dx)),
+        calc(-50% + var(--dy))
+      )
+      scale(0.2);
+  }
+}
+
+@keyframes star-combo-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .star-arena {
+    height: 370px;
+    border-radius: 22px;
+  }
+
+  .star-score-popup {
+    font-size: 22px;
+  }
+
+  .star-particle {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-header *,
+  .star-arena *,
+  .star-arena *::before,
+  .star-arena *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRight, Gamepad2 } from "lucide-react";
 import { RockPaperScissors } from "@/components/game/RockPaperScissors";
-import { StarClickGame } from "@/components/game/StarClickGame";
-import { DartsGame } from "@/components/game/DartsGame";
 import { AimTrainerGame } from "@/components/game/AimTrainerGame";
+import { DartsGame } from "@/components/game/Dart/DartsGame";
+import { StarClickGame } from "@/components/game/starGame/StarClickGame";
 
 const availableGames = {
   "rock-paper-scissors": {
