@@ -14,8 +14,8 @@ const vazirmatn = Vazirmatn({
 });
 
 export const metadata: Metadata = {
-  title: "دات‌وان پلی | DotOne Play",
-  description: "پلتفرم بازی و پاداش دات‌وان",
+  title: "مای دات پلی | MyDot Play",
+  description: "پلتفرم بازی و پاداش مای دات",
 };
 
 export default function RootLayout({

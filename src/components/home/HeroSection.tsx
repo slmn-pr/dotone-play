@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="pointer-events-none absolute -bottom-32 right-1/4 size-72 rounded-full bg-fuchsia-400/20 blur-3xl" />
       <div className="relative z-10 max-w-2xl">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs text-[#dbd5ff]">
-          <Sparkles size={15} /> دنیای بازی و پاداش دات‌وان
+          <Sparkles size={15} /> دنیای بازی و پاداش مای دات
         </span>
         <h1 className="mt-6 text-3xl font-black leading-[1.7] sm:text-4xl lg:text-[46px]">
           بازی کن،{" "}

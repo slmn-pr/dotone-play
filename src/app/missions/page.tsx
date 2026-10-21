@@ -30,7 +30,7 @@ export default function MissionsPage() {
       id: "complete-profile",
       title: "تکمیل پروفایل",
       description:
-        "اطلاعات حساب کاربری خودت رو تکمیل کن و اولین جایزه دات‌وان پلی رو دریافت کن.",
+        "اطلاعات حساب کاربری خودت رو تکمیل کن و اولین جایزه مای دات پلی رو دریافت کن.",
       points: 150,
       icon: UserRound,
       completed: profileCompleted,
@@ -53,7 +53,7 @@ export default function MissionsPage() {
       id: "daily-challenge",
       title: "چالش روزانه",
       description:
-        "هر روز به دات‌وان پلی سر بزن و در چالش‌ها شرکت کن.",
+        "هر روز به مای دات پلی سر بزن و در چالش‌ها شرکت کن.",
       points: 200,
       icon: Zap,
       completed: false,
@@ -62,7 +62,7 @@ export default function MissionsPage() {
     },
     {
       id: "brand-mission",
-      title: "آشنایی با دات‌وان",
+      title: "آشنایی با مای دات",
       description:
         "با محصولات و خدمات اکوسیستم دات‌وان آشنا شو.",
       points: 250,
@@ -85,7 +85,7 @@ export default function MissionsPage() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-violet-300/20 bg-violet-300/10 px-3 py-2 text-xs font-bold text-violet-200">
               <Target size={16} />
-              مرکز مأموریت‌های دات‌وان
+              مرکز مأموریت‌های مای دات
             </span>
 
             <h1 className="mt-5 text-3xl font-black sm:text-4xl">

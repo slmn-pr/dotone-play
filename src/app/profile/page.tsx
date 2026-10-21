@@ -40,12 +40,12 @@ export default function ProfilePage() {
           <div className="min-w-0 flex-1">
             <span className="flex items-center gap-2 text-xs text-violet-200">
               <Crown size={15} />
-              حساب کاربری دات‌وان پلی
+              حساب کاربری مای دات پلی
             </span>
 
             <h1 className="mt-3 break-words text-2xl font-black sm:text-3xl">
               {isHydrated
-                ? profile.fullName || "بازیکن دات‌وان"
+                ? profile.fullName || "بازیکن مای دات"
                 : "در حال بارگذاری..."}
             </h1>
 
